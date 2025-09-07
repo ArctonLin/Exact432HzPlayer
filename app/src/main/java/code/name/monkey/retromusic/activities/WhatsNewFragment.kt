@@ -97,6 +97,7 @@ class WhatsNewFragment : BottomSheetDialogFragment() {
             )
         }
         setChangelogRead(requireContext())
+        /*
         binding.tgFab.setOnClickListener {
             openUrl(Constants.TELEGRAM_CHANGE_LOG)
         }
@@ -110,6 +111,7 @@ class WhatsNewFragment : BottomSheetDialogFragment() {
                 binding.tgFab.extend()
             }
         }
+        */
     }
 
     override fun onDestroy() {

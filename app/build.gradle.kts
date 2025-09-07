@@ -22,7 +22,7 @@ android {
 
         applicationId = "com.exact432hz.exact432hzplayer"
         versionCode = 10650
-        versionName = "6.5.0-432Hz"
+        versionName = "1.0.0"
 
         buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties("../public.properties"), "GOOGLE_PLAY_LICENSE_KEY")}\"")
     }

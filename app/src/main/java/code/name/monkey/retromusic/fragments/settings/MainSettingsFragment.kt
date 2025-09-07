@@ -73,7 +73,7 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
         binding.otherSettings.setOnClickListener(this)
         binding.aboutSettings.setOnClickListener(this)
         binding.backupRestoreSettings.setOnClickListener(this)
-
+        /*
         binding.buyProContainer.apply {
             isGone = App.isProVersion()
             setOnClickListener {
@@ -87,6 +87,8 @@ class MainSettingsFragment : Fragment(), View.OnClickListener {
             binding.buyPremium.setTextColor(it)
             binding.diamondIcon.imageTintList = ColorStateList.valueOf(it)
         }
+        */
+
 
         binding.container.drawAboveSystemBarsWithPadding()
     }
