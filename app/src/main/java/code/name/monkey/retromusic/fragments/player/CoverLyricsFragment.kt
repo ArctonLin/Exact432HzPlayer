@@ -50,7 +50,7 @@ class CoverLyricsFragment : AbsMusicServiceFragment(R.layout.fragment_cover_lyri
         }
         // Remove background on Fit theme
         val nps = PreferenceUtil.nowPlayingScreen
-        if (nps == NowPlayingScreen.Fit || nps == NowPlayingScreen.Full) {
+        if (nps == NowPlayingScreen.Fit /*|| nps == NowPlayingScreen.Full*/) {
             binding.root.background = null
         }
         binding.playerLyricsLine2.setOnClickListener {

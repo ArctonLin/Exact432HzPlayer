@@ -151,5 +151,6 @@ class AlbumCoverStylePreferenceDialog : DialogFragment(),
 }
 
 private fun isAlbumCoverStyle(style: AlbumCoverStyle): Boolean {
-    return (!App.isProVersion() && (style == Circle || style == Card || style == FullCard))
+    //return (!App.isProVersion() && (style == Circle || style == Card || style == FullCard))
+    return false
 }

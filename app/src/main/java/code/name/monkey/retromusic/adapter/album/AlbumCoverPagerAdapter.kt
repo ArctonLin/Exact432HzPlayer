@@ -137,7 +137,7 @@ class AlbumCoverPagerAdapter(
 
         private fun getLayoutWithPlayerTheme(): Int {
             return when (PreferenceUtil.nowPlayingScreen) {
-                Card, Fit, Tiny, Classic, Gradient, Full -> R.layout.fragment_album_full_cover
+                /*Card,*/ Fit, Tiny, Classic, Gradient/*, Full*/ -> R.layout.fragment_album_full_cover
                 Peek -> R.layout.fragment_peek_album_cover
                 else -> {
                     if (PreferenceUtil.isCarouselEffect) {
@@ -146,10 +146,10 @@ class AlbumCoverPagerAdapter(
                         when (PreferenceUtil.albumCoverStyle) {
                             AlbumCoverStyle.Normal -> R.layout.fragment_album_cover
                             AlbumCoverStyle.Flat -> R.layout.fragment_album_flat_cover
-                            AlbumCoverStyle.Circle -> R.layout.fragment_album_circle_cover
-                            AlbumCoverStyle.Card -> R.layout.fragment_album_card_cover
+                            //AlbumCoverStyle.Circle -> R.layout.fragment_album_circle_cover
+                            //AlbumCoverStyle.Card -> R.layout.fragment_album_card_cover
                             AlbumCoverStyle.Full -> R.layout.fragment_album_full_cover
-                            AlbumCoverStyle.FullCard -> R.layout.fragment_album_full_card_cover
+                            //AlbumCoverStyle.FullCard -> R.layout.fragment_album_full_card_cover
                         }
                     }
                 }

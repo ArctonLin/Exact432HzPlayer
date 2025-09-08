@@ -575,7 +575,7 @@ object PreferenceUtil {
                     return albumCoverStyle
                 }
             }
-            return AlbumCoverStyle.Card
+            return AlbumCoverStyle.Normal
         }
         set(value) = sharedPreferences.edit { putInt(ALBUM_COVER_STYLE, value.id) }
 
@@ -588,7 +588,7 @@ object PreferenceUtil {
                     return nowPlayingScreen
                 }
             }
-            return NowPlayingScreen.Adaptive
+            return NowPlayingScreen.Normal
         }
         set(value) = sharedPreferences.edit {
             putInt(NOW_PLAYING_SCREEN_ID, value.id)

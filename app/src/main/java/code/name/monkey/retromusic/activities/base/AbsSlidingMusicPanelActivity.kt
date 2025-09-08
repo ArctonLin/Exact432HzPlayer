@@ -431,6 +431,7 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
             if (PreferenceUtil.isAdaptiveColor && (nowPlayingScreen == Normal || nowPlayingScreen == Flat || nowPlayingScreen == Material)) {
                 setLightNavigationBar(true)
                 setLightStatusBar(isColorLight)
+            /*
             } else if (nowPlayingScreen == Card || nowPlayingScreen == Blur || nowPlayingScreen == BlurCard) {
                 animateNavigationBarColor(android.graphics.Color.BLACK)
                 navigationBarColor = android.graphics.Color.BLACK
@@ -442,6 +443,7 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
                 setLightNavigationBar(isColorLight)
                 setLightStatusBar(isColorLight)
             } else if (nowPlayingScreen == Full) {
+            */
                 animateNavigationBarColor(paletteColor)
                 navigationBarColor = paletteColor
                 setLightNavigationBar(isColorLight)
@@ -576,22 +578,22 @@ abstract class AbsSlidingMusicPanelActivity : AbsMusicServiceActivity(),
         nowPlayingScreen = PreferenceUtil.nowPlayingScreen
 
         val fragment: AbsPlayerFragment = when (nowPlayingScreen) {
-            Blur -> BlurPlayerFragment()
-            Adaptive -> AdaptiveFragment()
+            //Blur -> BlurPlayerFragment()
+            //Adaptive -> AdaptiveFragment()
             Normal -> PlayerFragment()
-            Card -> CardFragment()
-            BlurCard -> CardBlurFragment()
+            //Card -> CardFragment()
+            //BlurCard -> CardBlurFragment()
             Fit -> FitFragment()
             Flat -> FlatPlayerFragment()
-            Full -> FullPlayerFragment()
-            Plain -> PlainPlayerFragment()
-            Simple -> SimplePlayerFragment()
+            //Full -> FullPlayerFragment()
+            //Plain -> PlainPlayerFragment()
+            //Simple -> SimplePlayerFragment()
             Material -> MaterialFragment()
-            Color -> ColorFragment()
+            //Color -> ColorFragment()
             Gradient -> GradientPlayerFragment()
             Tiny -> TinyPlayerFragment()
             Peek -> PeekPlayerFragment()
-            Circle -> CirclePlayerFragment()
+            //Circle -> CirclePlayerFragment()
             Classic -> ClassicPlayerFragment()
             MD3 -> MD3PlayerFragment()
             else -> PlayerFragment()

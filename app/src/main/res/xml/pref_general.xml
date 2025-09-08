@@ -17,11 +17,6 @@
             app:icon="@drawable/ic_palette_outline" />
 
         <code.name.monkey.appthemehelper.common.prefs.supportv7.ATESwitchPreference
-            android:key="black_theme"
-            android:layout="@layout/list_item_view_switch_no_title"
-            android:title="@string/black_theme_name" />
-
-        <code.name.monkey.appthemehelper.common.prefs.supportv7.ATESwitchPreference
             android:defaultValue="@bool/md3_enabled"
             android:disableDependentsState="true"
             android:key="material_you"
