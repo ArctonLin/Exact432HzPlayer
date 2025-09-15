@@ -813,19 +813,19 @@ class MusicService : MediaBrowserServiceCompat(),
         var songTitle = getSongAt(getPosition()).title
         val freq=analyzeTone(this, songUri)
         val ratio=432f/freq
-        playbackSpeed=ratio
+        playbackPitch=ratio
         playbackManager.setPlaybackSpeedPitch(playbackSpeed, playbackPitch)
 
 
-        if (!songTitle.contains(" Hz] ")) {
+        if (!songTitle.contains("Hz] ")) {
             val formattedFreq = String.format("%.1f", freq)
-            songTitle = "[$formattedFreq Hz] $songTitle"
+            songTitle = "[${formattedFreq}Hz] $songTitle"
             getSongAt(getPosition()).title=songTitle
             notifyChange(META_CHANGED)
         }
 
 
-        Log.d("MusicService", "[Speed] Play speed ratio for 432Hz: $ratio for $songTitle")
+        Log.d("MusicService", "[Speed] Play pitch ratio for 432Hz: $ratio for $songTitle")
     }
 
     fun playNextSong(force: Boolean) {
