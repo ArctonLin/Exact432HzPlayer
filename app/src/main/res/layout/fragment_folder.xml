@@ -14,6 +14,7 @@
         android:clipToPadding="false"
         android:overScrollMode="@integer/overScrollMode"
         android:scrollbars="none"
+        android:paddingBottom="@dimen/mini_player_height"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
 
     <code.name.monkey.retromusic.views.TopAppBarLayout
