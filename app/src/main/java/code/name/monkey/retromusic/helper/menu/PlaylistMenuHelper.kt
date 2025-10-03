@@ -40,6 +40,14 @@ object PlaylistMenuHelper : KoinComponent {
         item: MenuItem
     ): Boolean {
         when (item.itemId) {
+            R.id.action_play_all -> {
+                MusicPlayerRemote.openQueue(playlistWithSongs.songs.toSongs(), 0, true)
+                return true
+            }
+            R.id.action_shuffle_all -> {
+                MusicPlayerRemote.openAndShuffleQueue(playlistWithSongs.songs.toSongs(), true)
+                return true
+            }
             R.id.action_play -> {
                 MusicPlayerRemote.openQueue(playlistWithSongs.songs.toSongs(), 0, true)
                 return true

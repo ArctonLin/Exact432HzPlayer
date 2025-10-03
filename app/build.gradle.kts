@@ -21,8 +21,8 @@ android {
         }
 
         applicationId = "com.exact432hz.exact432hzplayer"
-        versionCode = 107
-        versionName = "1.0.7"
+        versionCode = 109
+        versionName = "1.0.9"
 
         buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties("../public.properties"), "GOOGLE_PLAY_LICENSE_KEY")}\"")
     }
@@ -112,6 +112,8 @@ dependencies {
     implementation(libs.androidx.palette.ktx)
 
     implementation(libs.androidx.mediarouter)
+    implementation(libs.navigation.fragment.ktx)
+    implementation(libs.navigation.ui.ktx)
     //Cast Dependencies
     "normalImplementation"(libs.google.play.services.cast.framework)
     //WebServer by NanoHttpd

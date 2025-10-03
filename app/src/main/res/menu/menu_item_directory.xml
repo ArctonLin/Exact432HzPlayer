@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_play_next"
-        android:title="@string/action_play_next"
-        app:showAsAction="never" />
+        android:id="@+id/action_play_all"
+        android:title="@string/action_play_all"
+        app:showAsAction="never" /> <!-- orig: action_play_next -->
     <item
-        android:id="@+id/action_add_to_current_playing"
-        android:title="@string/action_add_to_playing_queue"
-        app:showAsAction="never" />
+        android:id="@+id/action_shuffle_all" 
+        android:title="@string/action_shuffle_all"
+        app:showAsAction="never" /> <!-- orig: action_add_to_current_playing -->
     <item
         android:id="@+id/action_add_to_playlist"
         android:title="@string/action_add_to_playlist"

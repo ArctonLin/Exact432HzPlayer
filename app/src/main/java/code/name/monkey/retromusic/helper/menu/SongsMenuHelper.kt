@@ -72,4 +72,13 @@ object SongsMenuHelper : KoinComponent {
         }
         return false
     }
+    fun playAll(activity: FragmentActivity, songs: List<Song>) {
+        // Play all songs immediately, starting from the first
+        MusicPlayerRemote.openQueue(songs, 0, true)
+    }
+
+    fun shuffleAll(activity: FragmentActivity, songs: List<Song>) {
+        // Shuffle and play all songs immediately
+        MusicPlayerRemote.openAndShuffleQueue(songs, true)
+    }
 }

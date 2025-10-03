@@ -213,7 +213,7 @@ class FoldersFragment : AbsMainActivityFragment(R.layout.fragment_folder),
             popupMenu.inflate(R.menu.menu_item_directory)
             popupMenu.setOnMenuItemClickListener { item: MenuItem ->
                 when (val itemId = item.itemId) {
-                    R.id.action_play_next, R.id.action_add_to_current_playing, R.id.action_add_to_playlist, R.id.action_delete_from_device -> {
+                    R.id.action_play_all, R.id. action_shuffle_all, R.id.action_play_next, R.id.action_add_to_current_playing, R.id.action_add_to_playlist, R.id.action_delete_from_device -> {
                         lifecycleScope.launch(Dispatchers.IO) {
                             listSongs(
                                 requireContext(),
@@ -222,9 +222,17 @@ class FoldersFragment : AbsMainActivityFragment(R.layout.fragment_folder),
                                 fileComparator
                             ) { songs ->
                                 if (songs.isNotEmpty()) {
-                                    SongsMenuHelper.handleMenuClick(
-                                        requireActivity(), songs, itemId
-                                    )
+                                    if (itemId == R.id.action_play_all) {
+                                        // Play all songs immediately
+                                        SongsMenuHelper.playAll(requireActivity(), songs)
+                                    } else if (itemId == R.id.action_shuffle_all) {
+                                        // Shuffle and play all songs immediately
+                                        SongsMenuHelper.shuffleAll(requireActivity(), songs)
+                                    } else {
+                                        SongsMenuHelper.handleMenuClick(
+                                            requireActivity(), songs, itemId
+                                        )
+                                    }
                                 }
                             }
                         }
