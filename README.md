@@ -2,8 +2,6 @@
 
 ### Google Play
 [<img src="assets/google-play-badge.png" height="80">](https://play.google.com/store/apps/details?id=com.exact432hz.exact432hzplayer)
-Google Play Store: https://play.google.com/store/apps/details?id=com.exact432hz.exact432hzplayer
-
 
 ### Introduction
 Exact 432Hz Player analyzes the instrument frequencies from the first 10 seconds of the audio file (PCM raw data) and automatically adjusts the playback pitch to convert all music to a 432Hz tone.
