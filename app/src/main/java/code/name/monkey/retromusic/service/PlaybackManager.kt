@@ -183,6 +183,10 @@ class PlaybackManager(val context: Context) {
     fun setPlaybackSpeedPitch(playbackSpeed: Float, playbackPitch: Float) {
         playback?.setPlaybackSpeedPitch(playbackSpeed, playbackPitch)
     }
+
+    fun setVolume(vol: Float) {
+        playback?.setVolume(vol)
+    }
 }
 
 enum class PlaybackLocation {

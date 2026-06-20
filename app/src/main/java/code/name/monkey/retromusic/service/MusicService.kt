@@ -121,6 +121,7 @@ class MusicService : MediaBrowserServiceCompat(),
     private lateinit var storage: PersistentStorage
     private var trackEndedByCrossfade = false
     private val serviceScope = CoroutineScope(Job() + Main)
+    private var volumeAdjustJob: kotlinx.coroutines.Job? = null
 
     @JvmField
     var position = -1
@@ -815,6 +816,27 @@ class MusicService : MediaBrowserServiceCompat(),
         val ratio=432f/freq
         playbackPitch=ratio
         playbackManager.setPlaybackSpeedPitch(playbackSpeed, playbackPitch)
+
+        playbackManager.setVolume(1.0f)
+        volumeAdjustJob?.cancel()
+        volumeAdjustJob = serviceScope.launch(Dispatchers.Default) {
+            val peak = code.name.monkey.retromusic.service.analyzeVolumePeak(this@MusicService, songUri)
+            if (peak > 0f) {
+                // Limit maximum gain to 4.0x to prevent deafening amplification of nearly silent files
+                val targetGain = kotlin.math.min(0.95f / peak, 4.0f)
+                val startVol = 1.0f
+                val steps = 10
+                val stepTime = 300L
+                val stepSize = (targetGain - startVol) / steps
+                for (i in 1..steps) {
+                    val currentVol = startVol + stepSize * i
+                    withContext(Dispatchers.Main) {
+                        playbackManager.setVolume(currentVol)
+                    }
+                    kotlinx.coroutines.delay(stepTime)
+                }
+            }
+        }
 
 
         if (!songTitle.contains("Hz] ")) {

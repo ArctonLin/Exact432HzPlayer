@@ -1,0 +1,1 @@
+Added automatic volume normalization for consistent playback levels across different songs
