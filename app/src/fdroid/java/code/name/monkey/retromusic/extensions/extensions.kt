@@ -12,6 +12,6 @@ fun FragmentActivity.installLanguageAndRecreate(code: String, onInstallComplete:
     onInstallComplete()
 }
 
-fun Context.goToProVersion() {}
+
 
 fun Context.installSplitCompat() {}

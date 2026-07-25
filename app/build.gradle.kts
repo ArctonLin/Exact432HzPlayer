@@ -14,15 +14,15 @@ android {
 
     defaultConfig {
         minSdk = 21
-        targetSdk = 36
+        targetSdk = 37
 
         vectorDrawables {
             useSupportLibrary = true
         }
 
         applicationId = "com.exact432hz.exact432hzplayer"
-        versionCode = 110
-        versionName = "1.1.0"
+        versionCode = 111
+        versionName = "1.1.1"
 
         buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties("../public.properties"), "GOOGLE_PLAY_LICENSE_KEY")}\"")
     }
@@ -135,7 +135,6 @@ dependencies {
 
     "normalImplementation"(libs.google.feature.delivery)
     "normalImplementation"(libs.google.play.review)
-    "normalImplementation"(libs.google.play.billing)
 
 
             implementation(libs.android.material)
@@ -167,8 +166,6 @@ dependencies {
 
     implementation(libs.chrisbanes.insetter)
 
-
-    implementation(libs.org.eclipse.egit.github.core)
     implementation(libs.jaudiotagger)
     implementation(libs.slidableactivity)
     implementation(libs.material.intro)

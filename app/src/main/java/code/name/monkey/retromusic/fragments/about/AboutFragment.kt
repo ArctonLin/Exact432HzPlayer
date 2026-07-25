@@ -83,17 +83,15 @@ class AboutFragment : Fragment(R.layout.fragment_about), View.OnClickListener {
             R.id.twitterLink -> openUrl(Constants.APP_TWITTER_LINK)
             R.id.changelog -> NavigationUtil.gotoWhatNews(requireActivity())
             R.id.openSource -> NavigationUtil.goToOpenSource(requireActivity())
-            R.id.bugReportLink -> NavigationUtil.bugReport(requireActivity())
             R.id.websiteLink -> openUrl(Constants.WEBSITE)
         }
     }
 
     private fun getAppVersion(): String {
         return try {
-            val isPro = if (App.isProVersion()) "Pro" else "Free"
             val packageInfo =
                 requireActivity().packageManager.getPackageInfo(requireActivity().packageName, 0)
-            "${packageInfo.versionName} $isPro"
+            "${packageInfo.versionName} Free"
         } catch (e: PackageManager.NameNotFoundException) {
             e.printStackTrace()
             "0.0.0"
