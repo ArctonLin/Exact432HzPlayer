@@ -11,3 +11,12 @@ https://github.com/RetroMusicPlayer/RetroMusicPlayer
 
 ![APP LOGO](Exact432Hz.png)
 
+---
+
+## Support
+
+<div align="center">
+  <a href="https://buymeacoffee.com/arcton" target="_blank">
+    <img src="buymeacoffee.jpg" alt="Buy Me A Coffee" width="360">
+  </a>
+</div>
